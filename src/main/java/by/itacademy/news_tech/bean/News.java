@@ -23,7 +23,7 @@ public class News implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private int newsId;
+	private int id;
 	
 	@Column
 	private String title;
@@ -41,11 +41,11 @@ public class News implements Serializable{
 	private Timestamp date;
 
 	public int getNewsId() {
-		return newsId;
+		return id;
 	}
 
-	public void setNewsId(int newsId) {
-		this.newsId = newsId;
+	public void setNewsId(int id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -90,7 +90,7 @@ public class News implements Serializable{
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(body, brief, date, newsId, style, title);
+		return Objects.hash(body, brief, date, id, style, title);
 	}
 
 	@Override
@@ -103,13 +103,13 @@ public class News implements Serializable{
 			return false;
 		News other = (News) obj;
 		return Objects.equals(body, other.body) && Objects.equals(brief, other.brief)
-				&& Objects.equals(date, other.date) && newsId == other.newsId && Objects.equals(style, other.style)
+				&& Objects.equals(date, other.date) && id == other.id && Objects.equals(style, other.style)
 				&& Objects.equals(title, other.title);
 	}
 
 	@Override
 	public String toString() {
-		return getClass().getName() + " [newsId=" + newsId + ", title=" + title + ", brief=" + brief + ", body=" + body + ", style="
+		return getClass().getName() + " [newsId=" + id + ", title=" + title + ", brief=" + brief + ", body=" + body + ", style="
 				+ style + ", date=" + date + "]";
 	}
 	
