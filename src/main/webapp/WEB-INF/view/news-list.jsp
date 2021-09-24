@@ -5,12 +5,13 @@
 <html>
 
 <head>
+
 <title>Newses</title>
 
 <!-- reference our style sheet -->
 
-<link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/style.css"/>" />
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/style.css"/>" />
+
 </head>
 
 <body>
@@ -41,28 +42,28 @@
 				</tr>
 
 				<!-- loop over and print our news -->
-				<c:forEach var="tempNewses" items="${newses}">
+				<c:forEach var="tempNews" items="${newses}">
 
 					<!-- construct an "update" link with news id -->
-					<c:url var="updateLink" value="/news/newsUpdate">
-						<c:param name="newsId" value="${tempNewses.id}" />
+					<c:url var="updateLink" value="/news/showFormForUpdate">
+						<c:param name="newsId" value="${tempNews.id}" />
 					</c:url>
 
 					<!-- construct an "delete" link with news id -->
 					<c:url var="deleteLink" value="/news/newsDelete">
-						<c:param name="newsId" value="${tempNewses.id}" />
+						<c:param name="newsId" value="${tempNews.id}" />
 					</c:url>
 
 					<tr>
-						<td>${tempNewses.title}</td>
-						<td>${tempNewses.brief}</td>
-						<td>${tempNewses.body}</td>
+						<td>${tempNews.title}</td>
+						<td>${tempNews.brief}</td>
+						<td>${tempNews.body}</td>
 
 						<td>
 							<!-- display the update link --> 
 							<a href="${updateLink}">Update</a>
 							| <a href="${deleteLink}"
-							onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
+							onclick="if (!(confirm('Are you sure you want to delete this news?'))) return false">Delete</a>
 						</td>
 
 					</tr>

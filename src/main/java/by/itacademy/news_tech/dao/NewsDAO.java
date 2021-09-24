@@ -2,7 +2,7 @@ package by.itacademy.news_tech.dao;
 
 import java.util.List;
 
-import by.itacademy.news_tech.bean.News;
+import by.itacademy.news_tech.entity.News;
 
 public interface NewsDAO {
 

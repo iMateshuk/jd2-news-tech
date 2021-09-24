@@ -8,7 +8,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import by.itacademy.news_tech.bean.News;
+import by.itacademy.news_tech.entity.News;
 
 @Repository
 public class NewsSQL implements NewsDAO {
@@ -21,7 +21,7 @@ public class NewsSQL implements NewsDAO {
 
 		Session currentSession = sessionFactory.getCurrentSession();
 
-		Query<News> theQuery = currentSession.createQuery("from News order by Date", News.class);
+		Query<News> theQuery = currentSession.createQuery("from News order by date", News.class);
 
 		return theQuery.getResultList();
 	}
@@ -33,7 +33,7 @@ public class NewsSQL implements NewsDAO {
 
 		return currentSession.get(News.class, theId);
 	}
-	
+
 	@Override
 	public void saveOrUpdateNews(News news) {
 

@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import by.itacademy.news_tech.bean.News;
 import by.itacademy.news_tech.dao.NewsDAO;
+import by.itacademy.news_tech.entity.News;
 
 @Service
 public class NewsServiceImpl implements NewsService {

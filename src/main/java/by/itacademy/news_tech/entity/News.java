@@ -1,4 +1,4 @@
-package by.itacademy.news_tech.bean;
+package by.itacademy.news_tech.entity;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -13,8 +13,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "news")
-public class News implements Serializable{
-	
+public class News implements Serializable {
+
 	/**
 	 * 
 	 */
@@ -24,27 +24,27 @@ public class News implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
-	
+
 	@Column
 	private String title;
-	
+
 	@Column
 	private String brief;
-	
+
 	@Column
 	private String body;
-	
+
 	@Column
 	private String style;
-	
+
 	@Column
 	private Timestamp date;
 
-	public int getNewsId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setNewsId(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -109,10 +109,8 @@ public class News implements Serializable{
 
 	@Override
 	public String toString() {
-		return getClass().getName() + " [newsId=" + id + ", title=" + title + ", brief=" + brief + ", body=" + body + ", style="
-				+ style + ", date=" + date + "]";
+		return getClass().getName() + " [id=" + id + ", title=" + title + ", brief=" + brief + ", body=" + body
+				+ ", style=" + style + ", date=" + date + "]";
 	}
-	
-	
 
 }
