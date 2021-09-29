@@ -1,5 +1,6 @@
 package by.itacademy.news_tech.controller;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,8 @@ public class NewsController {
 	public String saveNews(@ModelAttribute("news") News theNews) {
 
 		// save the news using our service
+		theNews.setDate(new Timestamp(System.currentTimeMillis()));
+		
 		newsService.saveOrUpdateNews(theNews);
 
 		return "redirect:/news/list";

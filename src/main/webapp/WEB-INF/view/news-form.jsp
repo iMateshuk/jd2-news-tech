@@ -6,9 +6,11 @@
 <head>
 	<title>Save News</title>
 
-	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/style.css"/>" />
+	<link rel="stylesheet" type="text/css" 
+	href="<c:url value="/resources/css/news-style.css"/>" />
 	
-	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/news-style.css"/>" />
+	<link rel="stylesheet" type="text/css" 
+	href="<c:url value="/resources/css/news-form-style.css"/>" />
 	
 	
 </head>
@@ -43,7 +45,11 @@
 
 					<tr>
 						<td><label>Body:</label></td>
-						<td><form:input path="body" /></td>
+						<td>
+							<%-- <form:label path="body" id="txtarea"/> --%>
+							<textarea name="body" rows="20" cols="60" maxlength="1000" required form="txtarea">
+							</textarea>
+						</td>
 					</tr>
 
 					<tr>

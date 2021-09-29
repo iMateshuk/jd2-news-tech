@@ -35,7 +35,7 @@
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
 		<property name="jdbcUrl"
-			value="jdbc:mysql://127.0.0.1/mynews?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC" />
+			value="jdbc:mysql://127.0.0.1/technews?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC" />
 		<property name="user" value="localUser" />
 		<property name="password" value="localPassw0rd" />
 
@@ -69,8 +69,9 @@
 		transaction-manager="myTransactionManager" />
 
 	<!-- Add support for reading web resources: css, images, js, etc ... -->
+	<mvc:annotation-driven />
 	<mvc:resources location="/resources/"
-		mapping="/resources/**"></mvc:resources>
+		mapping="/resources/**"/>
 
 </beans>
 

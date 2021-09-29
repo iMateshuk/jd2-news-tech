@@ -35,9 +35,6 @@ public class News implements Serializable {
 	private String body;
 
 	@Column
-	private String style;
-
-	@Column
 	private Timestamp date;
 
 	public int getId() {
@@ -72,14 +69,6 @@ public class News implements Serializable {
 		this.body = body;
 	}
 
-	public String getStyle() {
-		return style;
-	}
-
-	public void setStyle(String style) {
-		this.style = style;
-	}
-
 	public Timestamp getDate() {
 		return date;
 	}
@@ -90,7 +79,7 @@ public class News implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(body, brief, date, id, style, title);
+		return Objects.hash(body, brief, date, id, title);
 	}
 
 	@Override
@@ -103,14 +92,13 @@ public class News implements Serializable {
 			return false;
 		News other = (News) obj;
 		return Objects.equals(body, other.body) && Objects.equals(brief, other.brief)
-				&& Objects.equals(date, other.date) && id == other.id && Objects.equals(style, other.style)
-				&& Objects.equals(title, other.title);
+				&& Objects.equals(date, other.date) && id == other.id && Objects.equals(title, other.title);
 	}
 
 	@Override
 	public String toString() {
 		return getClass().getName() + " [id=" + id + ", title=" + title + ", brief=" + brief + ", body=" + body
-				+ ", style=" + style + ", date=" + date + "]";
+				+ ", date=" + date + "]";
 	}
 
 }

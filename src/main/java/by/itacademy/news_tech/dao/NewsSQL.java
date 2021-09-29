@@ -36,7 +36,7 @@ public class NewsSQL implements NewsDAO {
 
 	@Override
 	public void saveOrUpdateNews(News news) {
-
+		
 		Session currentSession = sessionFactory.getCurrentSession();
 
 		currentSession.saveOrUpdate(news);

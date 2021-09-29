@@ -10,7 +10,8 @@
 
 <!-- reference our style sheet -->
 
-<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/style.css"/>" />
+<link rel="stylesheet" type="text/css" 
+href="<c:url value="/resources/css/news-style.css"/>">
 
 </head>
 
@@ -39,6 +40,7 @@
 					<th>Title</th>
 					<th>Brief</th>
 					<th>Body</th>
+					<th>Operation</th>
 				</tr>
 
 				<!-- loop over and print our news -->
@@ -57,7 +59,7 @@
 					<tr>
 						<td>${tempNews.title}</td>
 						<td>${tempNews.brief}</td>
-						<td>${tempNews.body}</td>
+						<td><pre id="pre">${tempNews.body}</pre></td>
 
 						<td>
 							<!-- display the update link --> 
