@@ -13,5 +13,5 @@ public interface NewsService {
 	public void saveOrUpdateNews(News news);
 
 	public void deleteNews(int theId);
-
+	
 }

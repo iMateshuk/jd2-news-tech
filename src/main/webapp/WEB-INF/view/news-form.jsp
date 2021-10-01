@@ -10,7 +10,7 @@
 	href="<c:url value="/resources/css/news-style.css"/>" />
 	
 	<link rel="stylesheet" type="text/css" 
-	href="<c:url value="/resources/css/news-form-style.css"/>" />
+	href="<c:url value="/resources/css/news-dop-style.css"/>" />
 	
 	
 </head>
@@ -47,7 +47,7 @@
 						<td><label>Body:</label></td>
 						<td>
 							<%-- <form:label path="body" id="txtarea"/> --%>
-							<textarea name="body" rows="20" cols="60" maxlength="1000" required form="txtarea">
+							<textarea name="body" rows="7" cols="50" maxlength="1000" required form="txtarea">
 							</textarea>
 						</td>
 					</tr>
@@ -67,7 +67,7 @@
 		<div style="clear; both;"></div>
 		
 		<p>
-			<a href="list">Back to List</a>
+			<a href="list">Back to Main</a>
 		</p>
 	
 	</div>

@@ -27,8 +27,7 @@ href="<c:url value="/resources/css/news-style.css"/>">
 
 		<div id="content">
 
-			<!-- put new button: Add Customer -->
-
+			<!-- put new button: Add News -->
 			<input type="button" value="Add News"
 				onclick="window.location.href='showFormForAdd'; return false;"
 				class="add-button" />
@@ -39,8 +38,8 @@ href="<c:url value="/resources/css/news-style.css"/>">
 				<tr>
 					<th>Title</th>
 					<th>Brief</th>
-					<th>Body</th>
-					<th>Operation</th>
+					<th></th>
+					<th></th>
 				</tr>
 
 				<!-- loop over and print our news -->
@@ -52,21 +51,15 @@ href="<c:url value="/resources/css/news-style.css"/>">
 					</c:url>
 
 					<!-- construct an "delete" link with news id -->
-					<c:url var="deleteLink" value="/news/newsDelete">
+					<c:url var="readLink" value="/news/readNews">
 						<c:param name="newsId" value="${tempNews.id}" />
 					</c:url>
 
 					<tr>
-						<td>${tempNews.title}</td>
-						<td>${tempNews.brief}</td>
-						<td><pre id="pre">${tempNews.body}</pre></td>
-
-						<td>
-							<!-- display the update link --> 
-							<a href="${updateLink}">Update</a>
-							| <a href="${deleteLink}"
-							onclick="if (!(confirm('Are you sure you want to delete this news?'))) return false">Delete</a>
-						</td>
+						<td><c:out value="${tempNews.title}"></c:out></td>
+						<td><c:out value="${tempNews.brief}"></c:out></td>
+						<td><a href="${readLink}">Read</a></td>
+						<td><a href="${updateLink}">Update</a></td>
 
 					</tr>
 

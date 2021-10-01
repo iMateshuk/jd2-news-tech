@@ -37,9 +37,8 @@ public class NewsController {
 	public String showFormForAdd(Model theModel) {
 
 		// create model attribute to bind form data
-		News theNews = new News();
 
-		theModel.addAttribute("news", theNews);
+		theModel.addAttribute("news", new News());
 
 		return "news-form";
 	}
@@ -71,20 +70,20 @@ public class NewsController {
 	@GetMapping("/newsDelete")
 	public String deleteNews(@RequestParam("newsId") int theId) {
 
-		// delete the customer
+		// delete the news
 		newsService.deleteNews(theId);
 
 		return "redirect:/news/list";
 	}
+	
+	@GetMapping("/readNews")
+	public String readNews(@RequestParam("newsId") int theId, Model theModel) {
 
-	/*
-	 * public List<News> getNewses();
-	 * 
-	 * public News getNews(int theId);
-	 * 
-	 * public void saveOrUpdateNews(News news); Use for save or update!!!!!!!!
-	 * 
-	 * public void deleteNews(int theId);
-	 */
+		// get the news
+		
+		theModel.addAttribute("news", newsService.getNews(theId));
+
+		return "news-read";
+	}
 
 }

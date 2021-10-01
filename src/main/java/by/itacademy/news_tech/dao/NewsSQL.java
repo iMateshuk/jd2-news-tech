@@ -21,7 +21,7 @@ public class NewsSQL implements NewsDAO {
 
 		Session currentSession = sessionFactory.getCurrentSession();
 
-		Query<News> theQuery = currentSession.createQuery("from News order by date", News.class);
+		Query<News> theQuery = currentSession.createQuery("from News order by date desc", News.class);
 
 		return theQuery.getResultList();
 	}
