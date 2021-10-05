@@ -80,7 +80,6 @@ public class NewsController {
 	public String readNews(@RequestParam("newsId") int theId, Model theModel) {
 
 		// get the news
-		
 		theModel.addAttribute("news", newsService.getNews(theId));
 
 		return "news-read";
