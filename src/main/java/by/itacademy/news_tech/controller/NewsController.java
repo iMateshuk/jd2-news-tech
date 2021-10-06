@@ -16,7 +16,7 @@ import by.itacademy.news_tech.entity.News;
 import by.itacademy.news_tech.service.NewsService;
 
 @Controller
-@RequestMapping("/news")
+//@RequestMapping("/news")
 public class NewsController {
 
 	@Autowired

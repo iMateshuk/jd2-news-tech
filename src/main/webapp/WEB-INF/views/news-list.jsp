@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 
@@ -32,6 +33,21 @@ href="<c:url value="/resources/css/news-style.css"/>">
 				onclick="window.location.href='showFormForAdd'; return false;"
 				class="add-button" />
 
+			<sec:authentication var="user" property="principal" />
+			<!-- put new button: Login in portal -->
+			<c:if test="${user == 'anonymousUser'}">
+				<input type="button" value="Login"
+					onclick="window.location.href='login'; return false;"
+					class="add-button" />
+			</c:if>
+
+			<!-- put new button: Logout in portal -->
+			<c:if test="${user != 'anonymousUser'}">
+					<input type="button" value="Logout" 
+					onclick="window.location.href='logout'; return false;"
+					class="add-button" />
+			</c:if>
+
 			<!--  add our html table here -->
 
 			<table>
@@ -46,12 +62,12 @@ href="<c:url value="/resources/css/news-style.css"/>">
 				<c:forEach var="tempNews" items="${newses}">
 
 					<!-- construct an "update" link with news id -->
-					<c:url var="updateLink" value="/news/showFormForUpdate">
+					<c:url var="updateLink" value="/showFormForUpdate">
 						<c:param name="newsId" value="${tempNews.id}" />
 					</c:url>
 
 					<!-- construct an "delete" link with news id -->
-					<c:url var="readLink" value="/news/readNews">
+					<c:url var="readLink" value="/readNews">
 						<c:param name="newsId" value="${tempNews.id}" />
 					</c:url>
 

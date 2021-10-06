@@ -44,17 +44,23 @@
 			</table>
 
 			<div style=""></div>
+			<br>
+			<!-- put new button: Delete News -->
+			<form action="${pageContext.request.contextPath}/newsDelete" method="GET">
+				<button type="submit" name="newsId" value="${news.id}"
+					onclick="if (!(confirm('Are you sure you want to delete this news?'))) return false"
+					class="add-button">Delete</button>
+			</form>
 
-			<c:url var="deleteLink" value="/news/newsDelete">
+			<%-- <c:url var="deleteLink" value="/newsDelete">
 				<c:param name="newsId" value="${news.id}" />
 			</c:url>
-			
 			<p>
-			<a href="${deleteLink}" class="delButton"
-				onclick="if (!(confirm('Are you sure you want to delete this news?'))) return false">Delete</a>
-			</p>
+				<a href="${deleteLink}" class="delButton"
+					onclick="if (!(confirm('Are you sure you want to delete this news?'))) return false">Delete</a>
+			</p> --%>
 			<p>
-				<a href="list">Back to Main</a>
+				<a href="list">Back to Newses</a>
 			</p>
 
 		</div>
