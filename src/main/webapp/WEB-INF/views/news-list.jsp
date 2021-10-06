@@ -43,7 +43,7 @@ href="<c:url value="/resources/css/news-style.css"/>">
 
 			<!-- put new button: Logout in portal -->
 			<c:if test="${user != 'anonymousUser'}">
-					<input type="button" value="Logout" 
+				<input type="button" value="Logout" 
 					onclick="window.location.href='logout'; return false;"
 					class="add-button" />
 			</c:if>
