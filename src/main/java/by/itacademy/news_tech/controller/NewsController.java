@@ -51,7 +51,7 @@ public class NewsController {
 		
 		newsService.saveOrUpdateNews(theNews);
 
-		return "redirect:/news/list";
+		return "redirect:list";
 	}
 	
 	@GetMapping("/showFormForUpdate")
@@ -73,7 +73,7 @@ public class NewsController {
 		// delete the news
 		newsService.deleteNews(theId);
 
-		return "redirect:/news/list";
+		return "redirect:list";
 	}
 	
 	@GetMapping("/readNews")

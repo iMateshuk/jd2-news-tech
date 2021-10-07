@@ -43,6 +43,7 @@ public class DispatcherConfig implements WebMvcConfigurer {
 	public void configureViewResolvers(ViewResolverRegistry viewResolver) {
 
 		viewResolver.jsp(PREFIX, SUFFIX);
+		/* viewResolver.viewResolver(viewResolver()); */
 	}
 
 	@Override

@@ -33,16 +33,20 @@ href="<c:url value="/resources/css/news-style.css"/>">
 				onclick="window.location.href='showFormForAdd'; return false;"
 				class="add-button" />
 
-			<sec:authentication var="user" property="principal" />
+			<sec:authentication var="userPrincipal" property="principal" />
 			<!-- put new button: Login in portal -->
-			<c:if test="${user == 'anonymousUser'}">
+			<c:if test="${userPrincipal == 'anonymousUser'}">
 				<input type="button" value="Login"
 					onclick="window.location.href='login'; return false;"
+					class="add-button" />
+
+				<input type="button" value="Registration"
+					onclick="window.location.href='showFormForAddUser'; return false;"
 					class="add-button" />
 			</c:if>
 
 			<!-- put new button: Logout in portal -->
-			<c:if test="${user != 'anonymousUser'}">
+			<c:if test="${userPrincipal != 'anonymousUser'}">
 				<input type="button" value="Logout" 
 					onclick="window.location.href='logout'; return false;"
 					class="add-button" />

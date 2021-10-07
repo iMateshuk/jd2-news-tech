@@ -19,42 +19,30 @@
 	
 	<div id="wrapper">
 		<div id="header">
-			<h2>Newses</h2>
+			<h2>User Registration</h2>
 		</div>
 	</div>
 
 	<div id="container">
-		<h3>Save News</h3>
+		<h3>User form</h3>
 	
-		<form:form action="saveNews" modelAttribute="news" method="POST">
-
-			<!-- need to associate this data with news id -->
-			<form:hidden path="id" />
-					
+		<form:form action="saveUser" modelAttribute="user" method="POST">
+		
 			<table>
 				<tbody>
 					<tr>
-						<td><label>Title:</label></td>
-						<td><form:input path="title" /></td>
+						<td><label>User name:</label></td>
+						<td><form:input path="username" /></td>
 					</tr>
 				
 					<tr>
-						<td><label>Brief:</label></td>
-						<td><form:input path="brief" /></td>
-					</tr>
-
-					<tr>
-						<td><label>Body:</label></td>
-						<td>
-							<%-- <form:label path="body" id="txtarea"/> --%>
-							<textarea name="body" rows="7" cols="50" maxlength="1000" required form="txtarea">
-							</textarea>
-						</td>
+						<td><label>Password:</label></td>
+						<td><form:password path="password"/></td>
 					</tr>
 
 					<tr>
 						<td><label></label></td>
-						<td><input type="submit" value="Save" class="save" /></td>
+						<td><input type="submit" value="Submit" class="save" /></td>
 					</tr>
 
 				
