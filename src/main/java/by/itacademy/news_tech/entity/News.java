@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "news")
@@ -25,12 +27,18 @@ public class News implements Serializable {
 	@Column(name = "id")
 	private int id;
 
+	@NotEmpty(message="provide title")
+	@Size(min=3, max=30, message = "title - min 3 chars and max 30")
 	@Column
 	private String title;
 
+	@NotEmpty(message="provide brief")
+	@Size(min=3, max=30, message = "brief - min 3 chars and max 30")
 	@Column
 	private String brief;
 
+	@NotEmpty(message="provide body")
+	@Size(min=3, max=1000, message = "body - min 3 chars and max 1000")
 	@Column
 	private String body;
 

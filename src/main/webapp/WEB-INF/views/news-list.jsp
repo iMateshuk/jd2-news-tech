@@ -40,9 +40,9 @@ href="<c:url value="/resources/css/news-style.css"/>">
 					onclick="window.location.href='login'; return false;"
 					class="add-button" />
 
-				<input type="button" value="Registration"
+				<!-- <input type="button" value="Registration"
 					onclick="window.location.href='showFormForAddUser'; return false;"
-					class="add-button" />
+					class="add-button" /> -->
 			</c:if>
 
 			<!-- put new button: Logout in portal -->

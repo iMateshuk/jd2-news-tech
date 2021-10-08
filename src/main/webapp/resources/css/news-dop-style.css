@@ -40,4 +40,7 @@ tr {
 	border-style:none;
 	text-align:left;	
 }
-	
+
+.failed {
+	color: red;
+}

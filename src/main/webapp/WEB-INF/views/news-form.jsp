@@ -30,14 +30,28 @@
 
 			<!-- need to associate this data with news id -->
 			<form:hidden path="id" />
-					
+			
+			<table>
+				<tr>
+					<td><form:errors path="title" class="failed"/></td>
+				</tr>
+				
+				<tr>
+					<td><form:errors path="brief" class="failed"/></td>
+				</tr>
+				
+				<tr>
+					<td><form:errors path="body" class="failed"/></td>
+				</tr>
+			</table>
+
 			<table>
 				<tbody>
 					<tr>
 						<td><label>Title:</label></td>
 						<td><form:input path="title" /></td>
 					</tr>
-				
+					
 					<tr>
 						<td><label>Brief:</label></td>
 						<td><form:input path="brief" /></td>
@@ -46,9 +60,7 @@
 					<tr>
 						<td><label>Body:</label></td>
 						<td>
-							<%-- <form:label path="body" id="txtarea"/> --%>
-							<textarea name="body" rows="7" cols="50" maxlength="1000" required form="txtarea">
-							</textarea>
+							<form:textarea path="body" rows="7" cols="50" maxlength="1000"></form:textarea>
 						</td>
 					</tr>
 
